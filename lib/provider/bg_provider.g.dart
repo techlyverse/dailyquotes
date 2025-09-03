@@ -6,7 +6,7 @@ part of 'bg_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$bgNotifierHash() => r'd5d30bb998335052943724127f0cde7ed016b658';
+String _$bgNotifierHash() => r'318d9493a692d4211edd028a7685f3692f971949';
 
 /// See also [BgNotifier].
 @ProviderFor(BgNotifier)

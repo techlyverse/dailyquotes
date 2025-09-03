@@ -1,13 +1,14 @@
+import 'package:dailyquotes/helper/category_helper.dart';
 import 'package:dailyquotes/preferences/preferences.dart';
 import 'package:dailyquotes/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'screens/home/home_screen.dart';
-import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.initPreferences();
+  CategoryHelper().initCategories();
   runApp(const MyApp());
 }
 

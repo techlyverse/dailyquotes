@@ -16,8 +16,6 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedCategory = ref.watch(categoryNotifierProvider);
-
     return Container(
       decoration: ref.watch(bgNotifierProvider),
       child: Scaffold(
@@ -53,7 +51,8 @@ class HomeScreen extends ConsumerWidget {
                           border: Border.all(color: Colors.white70, width: 2),
                         ),
                         child: Text(
-                          selectedCategory ?? "No Category Selected",
+                          ref.watch<String>(categoryNotifierProvider) ??
+                              "No Category Selected",
                           style: fonts[ref.watch(fontNotifierProvider)],
                         ),
                       ),
@@ -61,11 +60,7 @@ class HomeScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-              Expanded(
-                child: CategoryTab(
-                  category: selectedCategory,
-                ),
-              ),
+              const Expanded(child: CategoryTab()),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Row(

@@ -1,5 +1,6 @@
 import 'package:dailyquotes/data/colors.dart';
 import 'package:dailyquotes/data/gradients.dart';
+import 'package:dailyquotes/data/images.dart';
 import 'package:dailyquotes/preferences/preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -24,7 +25,9 @@ class BgNotifier extends _$BgNotifier {
       );
     }
 
-    return BoxDecoration(color: colors[0]);
+    return BoxDecoration(
+      image: DecorationImage(image: AssetImage(images[0]), fit: BoxFit.cover),
+    );
   }
 
   Future<void> updateColor(int index) async {

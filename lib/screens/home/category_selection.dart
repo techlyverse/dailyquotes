@@ -1,10 +1,8 @@
-import 'package:dailyquotes/data/quotes/en_quotes.dart';
-import 'package:dailyquotes/theme/theme.dart';
+import 'package:dailyquotes/helper/category_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/fonts.dart';
-import '../../models/quote.dart';
 import '../../provider/category_provider.dart';
 import '../../provider/font_provider.dart';
 
@@ -14,8 +12,7 @@ class CategorySelection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    final categories = getAllDistinctTags(enQuotes);
+    final categories = CategoryHelper().categories;
     final selectedCategory = ref.watch(categoryNotifierProvider);
 
     return Column(
@@ -88,14 +85,5 @@ class CategorySelection extends ConsumerWidget {
         const SizedBox(height: 20),
       ],
     );
-  }
-
-  static List<String> getAllDistinctTags(List<Quote> quotes) {
-    final tagSet = <String>{};
-    for (var quote in quotes) {
-      tagSet.addAll(quote.tags);
-    }
-
-    return tagSet.toList();
   }
 }

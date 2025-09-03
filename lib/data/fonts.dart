@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+@pragma('vm:entry-point')
 final List<TextStyle> fonts = [
   GoogleFonts.ubuntu(fontSize: 22),
   GoogleFonts.poppins(fontSize: 22),

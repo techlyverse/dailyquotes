@@ -6,18 +6,19 @@ import 'package:dailyquotes/provider/font_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dailyquotes/preferences/preferences.dart';
 
+import '../../provider/category_provider.dart';
+
 final likeProvider = StateProvider<bool>((ref) => false);
 
 class CategoryTab extends ConsumerWidget {
-  const CategoryTab({super.key, required this.category});
-  final String? category;
+  const CategoryTab({super.key});
   static final String language = Preferences.getLanguage();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final String category = ref.watch<String>(categoryNotifierProvider);
     final quotes = enQuotes
-        .where((quote) =>
-            quote.tags.contains(category) && quote.quote.length < 350)
+        .where((q) => q.tags.contains(category) && q.quote.length < 350)
         .toList();
     return PageView.builder(
         scrollDirection: Axis.vertical,
