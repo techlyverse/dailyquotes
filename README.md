@@ -1,4 +1,4 @@
-# ✨ DailyQuotes - Your Daily Dose of **Offline** Inspiration
+# ✨ Quotes App
 
 **DailyQuotes is a clean, modern, and completely offline-first mobile application designed to deliver daily inspirational and motivational quotes. Built with Flutter, this app offers reliable, lightning-fast access to a curated collection of quotes without needing any internet connection.**
 
