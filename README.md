@@ -1,8 +1,8 @@
-# ✨ Quotes App
+# Quotes App
 
 **DailyQuotes is a clean, modern, and completely offline-first mobile application designed to deliver daily inspirational and motivational quotes. Built with Flutter, this app offers reliable, lightning-fast access to a curated collection of quotes without needing any internet connection.**
 
-## 🌟 Key Features
+## Key Features
 
 The app is built for seamless performance and reliable access, no matter the user's connectivity:
 
@@ -13,7 +13,7 @@ The app is built for seamless performance and reliable access, no matter the use
 * **Intuitive UI/UX:** A beautiful and simple user interface built with Flutter for a smooth, native-like experience on all platforms.
 * **Local Data Storage:** Quotes and user data are managed locally using efficient **[Mention your method here: e.g., SQLite, Hive, or JSON Assets]** for maximum speed.
 
-## 📱 App Preview
+## App Preview
 
 | Home Screen | Change Background | Update Category |
 | :---: | :---: | :---: |
@@ -21,7 +21,7 @@ The app is built for seamless performance and reliable access, no matter the use
 
 *Replace the bracketed text above with actual screenshots from your running app.*
 
-## 🚀 Get the App
+## Get the App
 
 Experience daily inspiration on your mobile device—no internet required after download!
 
@@ -30,11 +30,11 @@ Experience daily inspiration on your mobile device—no internet required after 
 | **Google Play Store** | [Get from play store](https://play.google.com/store/apps/details?id=com.techlyverse.quotes)|
 | **Source Code** | [View source on gitHub](https://github.com/techlyverse/dailyquotes) |
 
-## 🛠️ Built With
+## Built With
 * **Framework:** [Flutter](https://flutter.dev/)
 * **Data Storage:** [ Local JSON Assets & Shared Preferences for simple data]
 
-## 💻 Getting Started (For Developers)
+## Getting Started (For Developers)
 
 Follow these steps to set up the project on your local machine. Since the project is offline, the setup is much simpler!
 
@@ -66,7 +66,7 @@ You only need the following installed:
     ```
     The application will run immediately without any external backend configuration.
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! If you have suggestions for new features, bug fixes, or want to contribute more quotes to the local database, please feel free to:
 
