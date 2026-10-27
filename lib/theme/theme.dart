@@ -1,4 +1,5 @@
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
+import "package:flutter/services.dart";
 import "package:google_fonts/google_fonts.dart";
 
 final ThemeData lightTheme = ThemeData(
@@ -14,17 +15,15 @@ final ThemeData lightTheme = ThemeData(
     onSecondary: Colors.white,
     onSurface: Colors.black87,
   ),
-  textTheme: GoogleFonts.openSansTextTheme(),
-  iconButtonTheme: IconButtonThemeData(
-    style: IconButton.styleFrom(
-      foregroundColor: Colors.black,
-      backgroundColor: Colors.white,
-    ),
-  ),
+  //textTheme: GoogleFonts.openSansTextTheme(),
   appBarTheme: const AppBarTheme(
     backgroundColor: Color(0xFFFFFDF9),
-    iconTheme: IconThemeData(color:  Colors.black87),
-  )
+    iconTheme: IconThemeData(color: Colors.black87),
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+    ),
+  ),
 );
 
 final ThemeData darkTheme = ThemeData(
@@ -41,15 +40,13 @@ final ThemeData darkTheme = ThemeData(
     onSecondary: Colors.black,
     onSurface: Colors.white,
   ),
-  textTheme: GoogleFonts.openSansTextTheme(),
-  iconButtonTheme: IconButtonThemeData(
-    style: IconButton.styleFrom(
-      foregroundColor: Colors.black,
-      backgroundColor: Colors.white,
-    ),
-  ),
+  //textTheme: GoogleFonts.openSansTextTheme(),
   appBarTheme: const AppBarTheme(
     backgroundColor: Color(0xFF1E1E1E),
     iconTheme: IconThemeData(color: Colors.white),
-  )
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+    ),
+  ),
 );

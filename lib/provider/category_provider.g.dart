@@ -6,21 +6,51 @@ part of 'category_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$categoryNotifierHash() => r'08dd444c2823f48a80d21ac59cd09ed111e24abf';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [CategoryNotifier].
 @ProviderFor(CategoryNotifier)
-final categoryNotifierProvider =
-    AutoDisposeNotifierProvider<CategoryNotifier, String?>.internal(
-  CategoryNotifier.new,
-  name: r'categoryNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$categoryNotifierHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final categoryProvider = CategoryNotifierProvider._();
 
-typedef _$CategoryNotifier = AutoDisposeNotifier<String?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class CategoryNotifierProvider
+    extends $NotifierProvider<CategoryNotifier, String> {
+  CategoryNotifierProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'categoryProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$categoryNotifierHash();
+
+  @$internal
+  @override
+  CategoryNotifier create() => CategoryNotifier();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String>(value),
+    );
+  }
+}
+
+String _$categoryNotifierHash() => r'b644b2a3a5357fb23569482ab0eed188eca85c08';
+
+abstract class _$CategoryNotifier extends $Notifier<String> {
+  String build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<String, String>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<String, String>, String, Object?, Object?>;
+    element.handleCreate(ref, build);
+  }
+}

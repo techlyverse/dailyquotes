@@ -1,5 +1,5 @@
 import 'package:dailyquotes/provider/bg_provider.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/gradients.dart';
@@ -21,7 +21,7 @@ class GradientTab extends StatelessWidget {
         return Consumer(builder: (context, ref, child) {
           return GestureDetector(
             onTap: () {
-              ref.read(bgNotifierProvider.notifier).updateGradient(index);
+              ref.read(bgProvider.notifier).updateGradient(index);
               Navigator.pop(context);
             },
             child: Container(

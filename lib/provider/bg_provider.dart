@@ -1,7 +1,8 @@
 import 'package:dailyquotes/data/colors.dart';
 import 'package:dailyquotes/data/gradients.dart';
+import 'package:dailyquotes/data/images.dart';
 import 'package:dailyquotes/preferences/preferences.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'bg_provider.g.dart';
@@ -9,17 +10,12 @@ part 'bg_provider.g.dart';
 @riverpod
 class BgNotifier extends _$BgNotifier {
   @override
-
   BoxDecoration build() {
     final colorIndex = Preferences.getColorIndex();
     final gradientIndex = Preferences.getGradientIndex();
     final imageUrl = Preferences.getImageUrl();
-    debugPrint('[BgNotifier] colorIndex = $colorIndex');
-    debugPrint('[BgNotifier] gradientIndex = $gradientIndex');
-    debugPrint('[BgNotifier] imageUrl = $imageUrl');
 
     if (colorIndex != null || gradientIndex != null || imageUrl != null) {
-      // there was no return keyword before boxdecoration so it was returning default -MG
       return BoxDecoration(
         color: colorIndex != null ? colors[colorIndex] : null,
         gradient: gradientIndex != null ? gradients[gradientIndex] : null,
@@ -29,7 +25,9 @@ class BgNotifier extends _$BgNotifier {
       );
     }
 
-    return BoxDecoration(color: colors[0]);
+    return BoxDecoration(
+      image: DecorationImage(image: AssetImage(images[0]), fit: BoxFit.cover),
+    );
   }
 
   Future<void> updateColor(int index) async {
@@ -39,7 +37,6 @@ class BgNotifier extends _$BgNotifier {
       Preferences.removeGradient(),
       Preferences.removeImageUrl(),
     ]);
-    debugPrint('[BgNotifier] saved colorIndex = ${Preferences.getColorIndex()}');
   }
 
   Future<void> updateGradient(int index) async {

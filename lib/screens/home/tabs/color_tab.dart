@@ -1,5 +1,5 @@
 import 'package:dailyquotes/provider/bg_provider.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/colors.dart';
@@ -21,7 +21,7 @@ class ColorTab extends StatelessWidget {
         return Consumer(builder: (context, ref, child) {
           return GestureDetector(
             onTap: () {
-              ref.read(bgNotifierProvider.notifier).updateColor(index);
+              ref.read(bgProvider.notifier).updateColor(index);
               Navigator.of(context).pop();
             },
             child: Container(

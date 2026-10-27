@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 final List<Color> colors = [
   const Color(0xFF5B86E5),
