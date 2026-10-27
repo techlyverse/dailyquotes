@@ -1,5 +1,5 @@
 import 'package:dailyquotes/helper/category_helper.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/fonts.dart';
@@ -13,7 +13,7 @@ class CategorySelection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final categories = CategoryHelper().categories;
-    final selectedCategory = ref.watch(categoryNotifierProvider);
+    final selectedCategory = ref.watch(categoryProvider);
 
     return Column(
       children: [
@@ -53,7 +53,7 @@ class CategorySelection extends ConsumerWidget {
                   return GestureDetector(
                     onTap: () {
                       ref
-                          .read(categoryNotifierProvider.notifier)
+                          .read(categoryProvider.notifier)
                           .setCategory(category);
                       Navigator.pop(context);
                     },
@@ -69,7 +69,7 @@ class CategorySelection extends ConsumerWidget {
                       ),
                       child: Text(
                         category,
-                        style: fonts[ref.watch(fontNotifierProvider)].copyWith(
+                        style: fonts[ref.watch(fontProvider)].copyWith(
                             fontSize: 16,
                             color: Theme.of(context).colorScheme.onSurface),
                         textAlign: TextAlign.center,

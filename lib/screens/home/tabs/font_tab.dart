@@ -1,6 +1,6 @@
 import 'package:dailyquotes/data/fonts.dart';
 import 'package:dailyquotes/provider/font_provider.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../theme/theme.dart';
@@ -24,7 +24,7 @@ class FontTab extends StatelessWidget {
         return Consumer(builder: (context, ref, child) {
           return GestureDetector(
             onTap: () {
-              ref.read(fontNotifierProvider.notifier).setFontIndex(index);
+              ref.read(fontProvider.notifier).setFontIndex(index);
               Navigator.pop(context);
             },
             child: Container(

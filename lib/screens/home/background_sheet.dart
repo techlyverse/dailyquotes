@@ -2,7 +2,7 @@ import 'package:dailyquotes/screens/home/tabs/color_tab.dart';
 import 'package:dailyquotes/screens/home/tabs/font_tab.dart';
 import 'package:dailyquotes/screens/home/tabs/gradient_tab.dart';
 import 'package:dailyquotes/screens/home/tabs/image_tab.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BackgroundSheet extends StatelessWidget {
   const BackgroundSheet({super.key});

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 final List<Gradient> gradients = [
   const LinearGradient(colors: [Color(0xFF36D1DC), Color(0xFF5B86E5)]),

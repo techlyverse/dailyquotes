@@ -3,7 +3,7 @@ import 'package:dailyquotes/provider/bg_provider.dart';
 import 'package:dailyquotes/provider/font_provider.dart';
 import 'package:dailyquotes/screens/home/category_tab.dart';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../provider/category_provider.dart';
@@ -17,7 +17,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      decoration: ref.watch(bgNotifierProvider),
+      decoration: ref.watch(bgProvider),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(
@@ -51,9 +51,9 @@ class HomeScreen extends ConsumerWidget {
                           border: Border.all(color: Colors.white70, width: 2),
                         ),
                         child: Text(
-                          ref.watch<String>(categoryNotifierProvider) ??
+                          ref.watch<String>(categoryProvider) ??
                               "No Category Selected",
-                          style: fonts[ref.watch(fontNotifierProvider)],
+                          style: fonts[ref.watch(fontProvider)],
                         ),
                       ),
                     ),

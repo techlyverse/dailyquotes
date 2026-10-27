@@ -1,5 +1,5 @@
 import 'package:dailyquotes/data/quotes/en_quotes.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../data/fonts.dart';
 import 'package:dailyquotes/provider/font_provider.dart';
@@ -8,7 +8,7 @@ import 'package:dailyquotes/preferences/preferences.dart';
 
 import '../../provider/category_provider.dart';
 
-final likeProvider = StateProvider<bool>((ref) => false);
+//final likeProvider = StateProvider<bool>((ref) => false);
 
 class CategoryTab extends ConsumerWidget {
   const CategoryTab({super.key});
@@ -16,7 +16,7 @@ class CategoryTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String category = ref.watch<String>(categoryNotifierProvider);
+    final String category = ref.watch<String>(categoryProvider);
     final quotes = enQuotes
         .where((q) => q.tags.contains(category) && q.quote.length < 350)
         .toList();
@@ -53,7 +53,7 @@ class CategoryTab extends ConsumerWidget {
                 child: Text(
                   quotes[index].quote,
                   textAlign: TextAlign.center,
-                  style: fonts[ref.watch(fontNotifierProvider)],
+                  style: fonts[ref.watch(fontProvider)],
                 ),
               ),
               const SizedBox(height: 20),

@@ -2,7 +2,7 @@ import 'package:dailyquotes/data/colors.dart';
 import 'package:dailyquotes/data/gradients.dart';
 import 'package:dailyquotes/data/images.dart';
 import 'package:dailyquotes/preferences/preferences.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'bg_provider.g.dart';
